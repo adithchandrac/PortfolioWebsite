@@ -1,7 +1,7 @@
 /*
 	Installed from https://reactbits.dev/ts/tailwind/
 */
-
+"use client"
 import React, { useEffect, useRef } from "react";
 import { Renderer, Transform, Vec3, Color, Polyline } from "ogl";
 

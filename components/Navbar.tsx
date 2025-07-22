@@ -2,40 +2,45 @@
 import { Sun, Moon } from 'lucide-react';
 import { useDarkMode } from './hooks/use-dark-mode';
 import Link from 'next/link';
-import AnimatedContent from '@/blocks/Animations/AnimatedContent/AnimatedContent';
-import Magnet from '@/blocks/Animations/Magnet/Magnet';
+import Image from 'next/image';
+
+const sections = [
+  { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
+];
 
 export default function Navbar() {
   const [isDark, setIsDark] = useDarkMode();
-  const sections = ['about', 'experience', 'projects', 'contact'];
+
   return (
-    <nav className="flex items-center justify-between py-4">
-      <div className="flex space-x-6">
-        {sections.map((sec, i) => (
-          <AnimatedContent
-            key={sec}
-            distance={150}
-            direction="horizontal"
-            reverse={i % 2 === 0}
-            duration={1}
-            ease="power2.out"
-            initialOpacity={0}
-            delay={0.2 + i * 0.1}
-          >
-            <Magnet padding={50} disabled={false} magnetStrength={50}>
-              <Link href={`#${sec}`} className="uppercase tracking-wide">
-                {sec}
-              </Link>
-            </Magnet>
-          </AnimatedContent>
+    <nav className="fixed top-6 left-1/2 z-50 -translate-x-1/2 w-fit px-6 py-2 rounded-full bg-background/70 dark:bg-card/70 border border-card/60 shadow-lg backdrop-blur-md flex items-center gap-2">
+      <Image
+        src="/logo.png"
+        alt="Logo"
+        width={36}
+        height={36}
+        className="rounded-full shadow-sm mr-2"
+      />
+     <ul className="flex items-center gap-1">
+        {sections.map((sec) => (
+          <li key={sec.href}>
+            <Link
+              href={sec.href}
+              className="px-4 py-2 rounded-full text-sm font-medium capitalize text-body-text hover:bg-primary/10 hover:text-primary transition-colors"
+            >
+              {sec.label}
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
       <button
         aria-label="Toggle Dark Mode"
         onClick={() => setIsDark(!isDark)}
-        className="p-2 rounded focus:outline-none focus:ring focus:ring-primary-light"
+        className="ml-2 p-2 rounded-full hover:bg-primary/10 transition focus:outline-none"
       >
-        {isDark ? <Sun size={20} aria-label="Light mode"/> : <Moon size={20} aria-label="Dark mode"/>}
+        {isDark ? <Sun size={18} /> : <Moon size={18} />}
       </button>
     </nav>
   );

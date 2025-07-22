@@ -26,13 +26,13 @@ const StarBorder = <T extends React.ElementType = "button">({
   const Component = as || "button";
 
   return (
-    <Component
-      className={`relative inline-block overflow-hidden rounded-[20px] ${className}`}
-      {...(rest as any)}
+    <Component 
+      className={`relative inline-block overflow-hidden rounded-[20px] ${className}`} 
       style={{
         padding: `${thickness}px 0`,
-        ...(rest as any).style,
+        ...rest.style
       }}
+      {...rest}
     >
       <div
         className="absolute w-[300%] h-[50%] opacity-70 bottom-[-11px] right-[-250%] rounded-full animate-star-movement-bottom z-0"

@@ -58,20 +58,16 @@ export const metadata: Metadata = {
   robots: "index, follow",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased">
         <Container>
           <SkipNav />
           <Navbar />
-          <main id="main-content">{children}</main>
+          <main id="main-content" className="mx-auto max-w-4xl px-6 py-12">
+            {children}
+          </main>
           <Footer />
         </Container>
       </body>

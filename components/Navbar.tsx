@@ -2,16 +2,33 @@
 import { Sun, Moon } from 'lucide-react';
 import { useDarkMode } from './hooks/use-dark-mode';
 import Link from 'next/link';
+import AnimatedContent from '@/blocks/Animations/AnimatedContent/AnimatedContent';
+import Magnet from '@/blocks/Animations/Magnet/Magnet';
 
 export default function Navbar() {
   const [isDark, setIsDark] = useDarkMode();
+  const sections = ['about', 'experience', 'projects', 'contact'];
   return (
     <nav className="flex items-center justify-between py-4">
-      <div className="space-x-6">
-        <Link href="#about">About</Link>
-        <Link href="#experience">Experience</Link>
-        <Link href="#projects">Projects</Link>
-        <Link href="#contact">Contact</Link>
+      <div className="flex space-x-6">
+        {sections.map((sec, i) => (
+          <AnimatedContent
+            key={sec}
+            distance={150}
+            direction="horizontal"
+            reverse={i % 2 === 0}
+            duration={1}
+            ease="power2.out"
+            initialOpacity={0}
+            delay={0.2 + i * 0.1}
+          >
+            <Magnet padding={50} disabled={false} magnetStrength={50}>
+              <Link href={`#${sec}`} className="uppercase tracking-wide">
+                {sec}
+              </Link>
+            </Magnet>
+          </AnimatedContent>
+        ))}
       </div>
       <button
         aria-label="Toggle Dark Mode"

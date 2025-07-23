@@ -1,74 +1,106 @@
 import Image from "next/image";
+import { Github, Linkedin, Mail } from "lucide-react";
 import About from "../../components/About";
 import ExperienceItem from "../../components/ExperienceItem";
 import ProjectCard from "../../components/ProjectCard";
 import ContactForm from "../../components/ContactForm";
-import Aurora from "@/blocks/Backgrounds/Aurora/Aurora";
+import TechStackSection from "../../components/TechStackSection";
+import HowIBuildSection from "../../components/HowIBuildSection";
+import Dither from "@/blocks/Backgrounds/Dither/Dither";
+import Silk from "@/blocks/Backgrounds/Silk/Silk";
+import 'aos/dist/aos.css';
+import GradientText from "@/blocks/TextAnimations/GradientText/GradientText";
+import ScrollFloat from "@/blocks/TextAnimations/ScrollFloat/ScrollFloat";
+import ScrollReveal from "@/blocks/TextAnimations/ScrollReveal/ScrollReveal";
+import ScrollStack from "@/blocks/Components/ScrollStack/ScrollStack";
+import Footer from "../../components/Footer";
+import LiquidChrome from "@/blocks/Backgrounds/LiquidChrome/LiquidChrome";
+
+// Aesthetic button for social links
+function AestheticButton({ href, label, icon }: { href: string; label: string; icon: "github" | "linkedin" | "mail" }) {
+  const Icon = icon === "github" ? Github : icon === "linkedin" ? Linkedin : Mail;
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-primary text-primary-foreground font-semibold shadow-lg hover:bg-primary/90 transition-colors text-xl"
+    >
+      <Icon size={24} />
+      {label}
+    </a>
+  );
+}
+
+function EmailButton({ email }: { email: string }) {
+  return (
+    <a
+      href={`mailto:${email}`}
+      className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white text-gray-800 font-semibold shadow-lg hover:bg-white/90 transition-colors text-xl"
+    >
+      <Mail size={24} />
+      Email
+    </a>
+  );
+}
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Aurora Background */}
+    <div className="relative min-h-screen">
+      {/* Dither Background */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
-        <Aurora
-          colorStops={["#6EE7B7", "#A78BFA", "#3A29FF"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
+        <LiquidChrome
         />
       </div>
       <main className="relative z-10 min-h-screen scroll-smooth">
+    <div
+        className="
+          w-[60vw] max-w-none
+          px-8 py-12 mt-24
+          bg-background/50 dark:bg-card/30
+          backdrop-blur-lg rounded-3xl
+          relative left-1/2 transform -translate-x-1/2  /* ← center me */
+        "
+      >
         {/* HERO */}
-        <section className="flex flex-col items-center justify-center min-h-[80vh] pt-32 pb-16 relative z-20">
+        <section className="flex flex-col items-center justify-center min-h-[80vh] pt-32 pb-16 relative z-20 w-full">
           <Image
             src="/headshot.png"
             alt="Adith Chandrasekaran"
-            width={140}
-            height={140}
-            className="rounded-xl shadow-lg object-cover aspect-square"
+            width={225}
+            height={180}
+            className="rounded-xl shadow-2xl object-cover aspect-square"
             priority
           />
-          <h1 className="mt-6 text-4xl font-bold text-center">
+          <h1 className="mt-8 text-6xl font-bold text-center tracking-tight">
             Adith Chandrasekaran
           </h1>
-          <p className="mt-2 text-lg text-gray-400 text-center max-w-xl">
+          <p className="mt-4 text-2xl text-gray-300 text-center max-w-2xl font-medium">
             Senior CS Student & Product Manager <br />
             Building modern web apps with React, Next.js & Gen‑AI
           </p>
-          <div className="flex gap-4 mt-4">
-            <a
-              href="mailto:adithchandrasekaran7@gmail.com"
-              className="text-sm text-primary underline underline-offset-4"
-            >
-              adithchandrasekaran7@gmail.com
-            </a>
-            <span className="text-gray-400">|</span>
-            <a
+          <div className="flex gap-6 mt-8 flex-wrap justify-center">
+            <EmailButton email="adithchandrasekaran7@gmail.com" />
+            <AestheticButton
               href="https://www.linkedin.com/in/adith-chandrasekaran/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary"
-            >
-              LinkedIn
-            </a>
-            <span className="text-gray-400">|</span>
-            <a
+              label="LinkedIn"
+              icon="linkedin"
+            />
+            <AestheticButton
               href="https://github.com/adithchandrac"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary"
-            >
-              GitHub
-            </a>
+              label="GitHub"
+              icon="github"
+            />
           </div>
+          <div className="pb-16" />
         </section>
 
         {/* ABOUT */}
         <About />
 
         {/* EXPERIENCE */}
-        <section id="experience" className="py-16 max-w-2xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-6">Experience</h2>
+        <section id="experience" className="py-16 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-semibold mb-8 text-center">Experience</h2>
           <ExperienceItem
             title="Software Engineer Intern - Gen-AI Focus"
             company="KPMG"
@@ -85,8 +117,8 @@ export default function HomePage() {
             logo="wallstreetedge.png"
             bullets={[
               "Co-created an AI tutor web app for students interested in working in the financial industry.",
-              "Utilized TypeScript, CSS, and Next.js to create a seamless component-based interface, leveraged AWS web services along with a Python script using the OpenAI API to develop our product’s backend, and MongoDB for our database.",
-              "Researched/Developed the product lifecycle, go-to-market (GTM) strategy, and managed the technical side (Github Issues).",
+              "Utilized TypeScript, CSS, and Next.js to create a seamless component-based interface, leveraged AWS web services along with a Python script using the OpenAI API for the backend, and MongoDB for the database.",
+              "Researched/developed the product lifecycle, go-to-market (GTM) strategy, and managed technical backlog via GitHub Issues.",
             ]}
           />
           <ExperienceItem
@@ -95,8 +127,8 @@ export default function HomePage() {
             dates="Dec 2024 - Jan 2025"
             logo="palantir.png"
             bullets={[
-              "Designed and developed an interactive map showcasing natural disaster risk areas in Asia and Africa, integrating large data sets from NASA.",
-              "Provided real-world solutions for disaster risk mitigation and response when risks materialize.",
+              "Designed and developed an interactive disaster-risk map for Asia and Africa using large NASA datasets.",
+              "Provided real-world solutions for disaster risk mitigation and response.",
             ]}
           />
           <ExperienceItem
@@ -105,16 +137,17 @@ export default function HomePage() {
             dates="May 2024 - Nov 2024"
             logo="amalgam.png"
             bullets={[
-              "Developed solutions across the full development lifecycle using Agile and test-driven development methodologies, focusing on both front-end and back-end components.",
-              "Developed UI applications using React.js, Vue.js, and HTML; created back-end services with Magnolia and Core Java.",
-              "Documented software requirements and specifications, ensuring alignment with functional and performance goals.",
+              "Developed front-end UIs with React.js, Vue.js, and HTML; built back-end services with Magnolia and Core Java.",
+              "Followed Agile and TDD methodologies across the full software lifecycle.",
+              "Documented requirements and specifications to meet performance goals.",
             ]}
           />
         </section>
+        <TechStackSection />
 
         {/* PROJECTS */}
-        <section id="projects" className="py-16 max-w-4xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-6">Projects & Competitions</h2>
+        <section id="projects" className="py-16 max-w-5xl mx-auto">
+          <h2 className="text-4xl font-semibold mb-8 text-center">Projects & Competitions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ProjectCard
               title="NBA Expansion Proposal"
@@ -133,12 +166,14 @@ export default function HomePage() {
             />
           </div>
         </section>
-
+        <HowIBuildSection />
         {/* CONTACT */}
-        <section id="contact" className="py-16 max-w-xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-6">Contact</h2>
+        <section id="contact" className="py-16 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-semibold mb-8 text-center">Contact</h2>
           <ContactForm />
         </section>
+        <Footer/>
+        </div>
       </main>
     </div>
   );

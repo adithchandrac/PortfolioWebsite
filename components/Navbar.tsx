@@ -13,6 +13,8 @@ const sections = [
   { label: 'Contact', href: '#contact' },
 ];
 
+// ...existing imports...
+
 export default function Navbar() {
   const [isDark, setIsDark] = useDarkMode();
 
@@ -27,7 +29,11 @@ export default function Navbar() {
         rounded-3xl
         shadow-md
         flex items-center
+        border border-white/20
       "
+      style={{
+        boxShadow: "0 2px 16px 0 rgba(255,255,255,0.04)",
+      }}
     >
       {/* Logo on the left */}
       <Image

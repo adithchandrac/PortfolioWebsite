@@ -316,18 +316,27 @@ export default function Dither({
   waveSpeed = 0.05,
   waveFrequency = 3,
   waveAmplitude = 0.3,
-  waveColor = [0.5, 0.5, 0.5],
+  waveColor = [0.56, 0.8, 0.7],
   colorNum = 4,
   pixelSize = 2,
   disableAnimation = false,
   enableMouseInteraction = true,
   mouseRadius = 1,
 }: DitherProps) {
+  // Fix: Only access window.devicePixelRatio on the client
+  const [dpr, setDpr] = useState(1);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setDpr(window.devicePixelRatio);
+    }
+  }, []);
+
   return (
     <Canvas
       className="w-full h-full relative"
       camera={{ position: [0, 0, 6] }}
-      dpr={window.devicePixelRatio}
+      dpr={dpr}
       gl={{ antialias: true, preserveDrawingBuffer: true }}
     >
       <DitheredWaves

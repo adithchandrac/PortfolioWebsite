@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import Container from "../../components/Container";
 import SkipNav from "../../components/SkipNav";
 
 const geistSans = Geist({
@@ -61,15 +60,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark">
-      <body className="antialiased">
-        <Container>
-          <SkipNav />
-          <Navbar />
-          <main id="main-content" className="mx-auto max-w-4xl px-6 py-12">
-            {children}
-          </main>
-          <Footer />
-        </Container>
+      <body className="antialiased bg-black dark:bg-black">
+        <SkipNav />
+        <Navbar />
+        <main id="main-content">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

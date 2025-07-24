@@ -1,9 +1,17 @@
-
+import Silk from "@/blocks/Backgrounds/Silk/Silk";
+import Container from "./Container";
 import ExperienceItem from "./ExperienceItem";
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-16 max-w-3xl mx-auto">
+    <section className="w-full py-12 flex justify-center">
+      <div className="relative w-full max-w-5xl rounded-3xl shadow-2xl overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none select-none">
+          <Silk />
+        </div>
+        <div className="relative z-10 w-full">
+          <Container>
+            <section id="experience" className="py-16 w-full">
               <h2 className="text-4xl font-semibold mb-8 text-center">Experience</h2>
               <ExperienceItem
                 title="Software Engineer Intern - Gen-AI Focus"
@@ -47,5 +55,9 @@ export default function ExperienceSection() {
                 ]}
               />
             </section>
+          </Container>
+        </div>
+      </div>
+    </section>
   );
 }

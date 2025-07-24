@@ -1,4 +1,3 @@
-// components/TechStackSection.tsx
 import GlassIcons from '@/blocks/Components/GlassIcons/GlassIcons'
 import { 
   FaReact, 
@@ -16,10 +15,10 @@ import {
   SiJira,
 } from 'react-icons/si'
 import { TbBrandAzure } from "react-icons/tb";
+import Container from "./Container";
 
 export default function TechStackSection() {
   const items = [
-    // Mixed order for a more varied layout
     { icon: <FaReact />,      color: 'blue',   label: 'React'      },
     { icon: <SiTypescript />, color: 'purple', label: 'TypeScript' },
     { icon: <FaAws />,        color: 'indigo', label: 'AWS'        },
@@ -35,20 +34,21 @@ export default function TechStackSection() {
   ]
 
   return (
-    <section id="stack" className="py-16 max-w-5xl mx-auto">
-      <h2 className="text-4xl font-semibold mb-8 text-center">
-        Technologies & Stacks
-      </h2>
-      <div style={{ height: '600px', position: 'relative' }}>
-        {/* 
-          Override default columns: 
-          1 col on xs, 2 on sm, 4 on md+
-          → 3 rows of 4 columns on medium+ screens
-        */}
-        <GlassIcons 
-          items={items} 
-          className="mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-4" 
-        />
+    <section className="w-full py-12 flex justify-center">
+      <div className="relative w-full max-w-7xl rounded-3xl shadow-2xl overflow-hidden border border-white/20">
+        <Container>
+          <section id="stack" className="py-16 w-full">
+            <h2 className="text-4xl font-semibold mb-8 text-center">
+              Technologies & Stacks
+            </h2>
+            <div style={{ height: '600px', position: 'relative' }}>
+              <GlassIcons 
+                items={items} 
+                className="mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-4" 
+              />
+            </div>
+          </section>
+        </Container>
       </div>
     </section>
   )

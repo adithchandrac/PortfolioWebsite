@@ -1,8 +1,3 @@
-/*
-	Installed from https://reactbits.dev/ts/tailwind/
-*/
-"use client";
-
 import { useEffect, useRef } from "react";
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
 
@@ -146,7 +141,7 @@ export default function Aurora(props: AuroraProps) {
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
     gl.canvas.style.backgroundColor = "transparent";
 
-    let program: Program;
+    let program: Program | undefined = undefined;
 
     function resize() {
       if (!ctn) return;
@@ -161,7 +156,7 @@ export default function Aurora(props: AuroraProps) {
 
     const geometry = new Triangle(gl);
     if (geometry.attributes.uv) {
-      delete geometry.attributes.uv;
+      delete (geometry.attributes).uv;
     }
 
     const colorStopsArray = colorStops.map((hex) => {

@@ -23,17 +23,19 @@ const StarBorder = <T extends React.ElementType = "button">({
   children,
   ...rest
 }: StarBorderProps<T>) => {
-  const Component = as || "button";
+  const Component = (as || "button") as React.ElementType;
 
-  return (
-    <Component 
-      className={`relative inline-block overflow-hidden rounded-[20px] ${className}`} 
-      style={{
+  return React.createElement(
+    Component,
+    {
+      className: `relative inline-block overflow-hidden rounded-[20px] ${className}`,
+      style: {
         padding: `${thickness}px 0`,
-        ...rest.style
-      }}
-      {...rest}
-    >
+        ...(rest.style || {})
+      },
+      ...rest
+    },
+    <>
       <div
         className="absolute w-[300%] h-[50%] opacity-70 bottom-[-11px] right-[-250%] rounded-full animate-star-movement-bottom z-0"
         style={{
@@ -51,7 +53,7 @@ const StarBorder = <T extends React.ElementType = "button">({
       <div className="relative z-1 bg-gradient-to-b from-black to-gray-900 border border-gray-800 text-white text-center text-[16px] py-[16px] px-[26px] rounded-[20px]">
         {children}
       </div>
-    </Component>
+    </>
   );
 };
 

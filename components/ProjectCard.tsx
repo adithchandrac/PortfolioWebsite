@@ -1,5 +1,3 @@
-// components/ProjectCard.tsx
-
 import Link from 'next/link';
 import {
   Card,
@@ -18,6 +16,7 @@ interface Props {
   repo: string;
   demo?: string;
   logos?: string[];
+  className?: string; 
 }
 
 export default function ProjectCard({
@@ -28,31 +27,34 @@ export default function ProjectCard({
   repo,
   demo,
   logos,
+  className = "",
 }: Props) {
   return (
     <Card
-      className="
+      className={`
         group
         h-full
-        w-full max-w-sm        /* cap width to a smaller size */
+        w-full
         flex flex-col
-        border border-border/60
-        bg-background/70
+        border border-white/10
+        bg-white/5
         backdrop-blur-md
         shadow-md
         rounded-2xl
-        transition-transform hover:-translate-y-1 hover:shadow-xl
-      "
+        transition-all
+        hover:border-primary/40
+        ${className}
+      `}
     >
       <CardHeader className="p-0">
         {/* Logos row */}
         {logos && logos.length > 0 && (
           <>
-            <div className="flex items-center justify-center gap-6 pt-20 pb-21">
+            <div className="flex items-center justify-center gap-6 pt-8 pb-8">
               <img
                 src={logos[0]}
                 alt="Logo 1"
-                className="h-30 w-30 object-contain"
+                className="h-12 w-12 object-contain"
               />
               {logos[1] && (
                 <>
@@ -62,12 +64,12 @@ export default function ProjectCard({
                   <img
                     src={logos[1]}
                     alt="Logo 2"
-                    className="h-30 w-30 object-contain"
+                    className="h-12 w-12 object-contain"
                   />
                 </>
               )}
             </div>
-            <div className="w-full border-b border-border/40" />
+            <div className="w-full border-b border-white/10" />
           </>
         )}
 
@@ -81,7 +83,7 @@ export default function ProjectCard({
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
-            <div className="w-full border-b border-border/40" />
+            <div className="w-full border-b border-white/10" />
           </>
         )}
       </CardHeader>

@@ -1,4 +1,4 @@
-import Dither from "@/blocks/Backgrounds/Dither/Dither";
+import Beams from "@/blocks/Backgrounds/Beams/Beams";
 import Container from "./Container";
 import ScrollReveal from "@/blocks/TextAnimations/ScrollReveal/ScrollReveal";
 
@@ -7,7 +7,16 @@ export default function About() {
     <section className="w-full py-12 flex justify-center">
       <div className="relative w-full max-w-7xl rounded-3xl shadow-2xl overflow-hidden">
         <div className="absolute inset-0 pointer-events-none select-none">
-          <Dither />
+          <Beams
+            beamWidth={3}
+            beamHeight={30}
+            beamNumber={20}
+            lightColor="#6366F1" // Indigo accent for cohesion
+            speed={2}
+            noiseIntensity={1.2}
+            scale={0.18}
+            rotation={30}
+          />
         </div>
         <div className="relative z-10 w-full">
           <Container>

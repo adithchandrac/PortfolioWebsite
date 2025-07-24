@@ -1,7 +1,6 @@
 // components/ExperienceItem.tsx
 'use client';
 import { motion } from 'framer-motion';
-import type { ReactNode } from 'react';
 
 interface Props {
   title: string;
@@ -39,11 +38,20 @@ export default function ExperienceItem({
       }}
       className="flex space-x-4 py-6 items-start bg-surface-dark rounded-lg p-4 shadow-md"
     >
-      <div className="h-14 w-14 rounded-xl bg-white/10 border border-border flex-shrink-0 overflow-hidden flex items-center justify-center">
+      <div className={`h-14 w-14 rounded-xl border border-border flex-shrink-0 overflow-hidden flex items-center justify-center
+  ${company === "KPMG" ? "bg-white" : "bg-white/10"}
+`}>
         <img
           src={logo}
           alt={`${company} logo`}
-          className="h-full w-full object-contain"
+          className={
+            company === "KPMG"
+              ? "h-full w-full object-cover scale-110"
+              : company === "WallStreetEdge"
+              ? "h-full w-full object-cover scale-110"
+              : "h-full w-full object-contain"
+          }
+          style={company === "KPMG" ? { paddingTop: 8, paddingBottom: 8 } : {}}
         />
       </div>
       <div>

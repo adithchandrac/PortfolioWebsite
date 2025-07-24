@@ -1,3 +1,5 @@
+// components/ProjectCard.tsx
+
 import Link from 'next/link';
 import {
   Card,
@@ -18,25 +20,57 @@ interface Props {
   logos?: string[];
 }
 
-export default function ProjectCard({ title, description, tech, img, repo, demo, logos }: Props) {
+export default function ProjectCard({
+  title,
+  description,
+  tech,
+  img,
+  repo,
+  demo,
+  logos,
+}: Props) {
   return (
-    <Card className="group h-full flex flex-col border border-border/60 bg-background/70 backdrop-blur-md shadow-md rounded-2xl transition-transform hover:-translate-y-1 hover:shadow-xl">
+    <Card
+      className="
+        group
+        h-full
+        w-full max-w-sm        /* cap width to a smaller size */
+        flex flex-col
+        border border-border/60
+        bg-background/70
+        backdrop-blur-md
+        shadow-md
+        rounded-2xl
+        transition-transform hover:-translate-y-1 hover:shadow-xl
+      "
+    >
       <CardHeader className="p-0">
         {/* Logos row */}
         {logos && logos.length > 0 && (
           <>
             <div className="flex items-center justify-center gap-6 pt-20 pb-21">
-              <img src={logos[0]} alt="Logo 1" className="h-30 w-30 object-contain" />
+              <img
+                src={logos[0]}
+                alt="Logo 1"
+                className="h-30 w-30 object-contain"
+              />
               {logos[1] && (
                 <>
-                  <span className="mx-2 text-3xl font-bold text-gray-400">×</span>
-                  <img src={logos[1]} alt="Logo 2" className="h-30 w-30 object-contain" />
+                  <span className="mx-2 text-3xl font-bold text-gray-400">
+                    ×
+                  </span>
+                  <img
+                    src={logos[1]}
+                    alt="Logo 2"
+                    className="h-30 w-30 object-contain"
+                  />
                 </>
               )}
             </div>
             <div className="w-full border-b border-border/40" />
           </>
         )}
+
         {/* Optional image */}
         {!logos && img && (
           <>
@@ -51,6 +85,7 @@ export default function ProjectCard({ title, description, tech, img, repo, demo,
           </>
         )}
       </CardHeader>
+
       <CardContent className="flex-1 flex flex-col justify-between p-5">
         <CardTitle className="text-lg font-semibold mb-1">{title}</CardTitle>
         <CardDescription className="mb-2">{description}</CardDescription>
@@ -58,6 +93,7 @@ export default function ProjectCard({ title, description, tech, img, repo, demo,
           <span className="font-medium">Tech:</span> {tech.join(", ")}
         </div>
       </CardContent>
+
       <CardFooter className="flex justify-center gap-4 pb-4">
         <Link
           href={repo}

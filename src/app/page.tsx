@@ -147,9 +147,11 @@ export default function HomePage() {
         <TechStackSection />
 
         {/* PROJECTS */}
-        <section id="projects" className="py-16 max-w-5xl mx-auto">
-          <h2 className="text-4xl font-semibold mb-8 text-center">Projects & Competitions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section id="projects" className="py-16 max-w-5xl mx-auto px-4 md:px-0">
+          <h2 className="text-4xl font-semibold mb-8 text-center">
+            Projects & Competitions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 justify-items-center">
             <ProjectCard
               title="NBA Expansion Proposal"
               description="Developed a comprehensive expansion strategy for the NBA, conducting financial modeling on revenue streams, operational costs, and market viability for Mexico City and Pittsburgh. Led market research and risk analysis, evaluating fan engagement, economic infrastructure, and competitive positioning."

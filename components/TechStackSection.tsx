@@ -40,7 +40,15 @@ export default function TechStackSection() {
         Technologies & Stack
       </h2>
       <div style={{ height: '600px', position: 'relative' }}>
-        <GlassIcons items={items} className="mx-auto" />
+        {/* 
+          Override default columns: 
+          1 col on xs, 2 on sm, 4 on md+
+          → 3 rows of 4 columns on medium+ screens
+        */}
+        <GlassIcons 
+          items={items} 
+          className="mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-4" 
+        />
       </div>
     </section>
   )

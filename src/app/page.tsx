@@ -52,6 +52,7 @@ export default function HomePage() {
         <LiquidChrome
         />
       </div>
+
       <main className="relative z-10 min-h-screen scroll-smooth">
     <div
         className="

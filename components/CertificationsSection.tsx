@@ -32,9 +32,9 @@ const certs = [
       <Image
         src="/ibm.png"
         alt="IBM Logo"
-        width={48}
-        height={48}
-        className="rounded bg-white p-1"
+        width={64}
+        height={64}
+        className=""
       />
     ),
     title: "IBM Data Analytics",

@@ -5,7 +5,7 @@ import ScrollReveal from "@/blocks/TextAnimations/ScrollReveal/ScrollReveal";
 export default function About() {
   return (
     <section className="w-full py-12 flex justify-center">
-      <div className="relative w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-7xl rounded-3xl shadow-2xl overflow-hidden">
         <div className="absolute inset-0 pointer-events-none select-none">
           <Dither />
         </div>

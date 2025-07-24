@@ -5,7 +5,7 @@ import ProjectCard from "./ProjectCard";
 export default function ProjectsSection() {
   return (
     <section className="w-full py-12 flex justify-center">
-      <div className="relative w-full max-w-3xl rounded-3xl shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-7xl rounded-3xl shadow-2xl overflow-hidden">
         <div className="absolute inset-0 pointer-events-none select-none">
           <Aurora />
         </div>

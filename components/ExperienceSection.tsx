@@ -5,8 +5,7 @@ import ExperienceItem from "./ExperienceItem";
 export default function ExperienceSection() {
   return (
     <section className="w-full py-12 flex justify-center">
-      <div className="relative w-full max-w-5xl rounded-3xl shadow-2xl overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none select-none">
+<div className="relative w-full max-w-7xl min-h-[700px] rounded-3xl shadow-2xl overflow-hidden">        <div className="absolute inset-0 pointer-events-none select-none">
           <Silk />
         </div>
         <div className="relative z-10 w-full">

@@ -12,7 +12,6 @@ export default function HomePage() {
       <HeroSection />
       <About />
       <ExperienceSection />
-
       <TechStackSection />
       <ProjectsSection />
       <WorkflowAndContactSection />

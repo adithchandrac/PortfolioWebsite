@@ -77,7 +77,7 @@ export default function HomePage() {
             Adith Chandrasekaran
           </h1>
           <p className="mt-4 text-2xl text-gray-300 text-center max-w-2xl font-medium">
-            Senior CS Student & Product Manager <br />
+            Senior CS Student & Full Stack Engineer & Product Manager <br />
             Building modern web apps with React, Next.js & Gen‑AI
           </p>
           <div className="flex gap-6 mt-8 flex-wrap justify-center">

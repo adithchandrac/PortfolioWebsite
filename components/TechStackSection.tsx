@@ -37,7 +37,7 @@ export default function TechStackSection() {
   return (
     <section id="stack" className="py-16 max-w-5xl mx-auto">
       <h2 className="text-4xl font-semibold mb-8 text-center">
-        Technologies & Stack
+        Technologies & Stacks
       </h2>
       <div style={{ height: '600px', position: 'relative' }}>
         {/* 

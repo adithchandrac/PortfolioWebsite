@@ -7,7 +7,7 @@ import Container from "./Container";
 export default function HeroSection() {
   return (
     <section className="w-full py-12 flex justify-center">
-      <div className="relative w-full max-w-7xl rounded-3xl shadow-2xl overflow-hidden h-[80vh] flex items-center mt-25">
+      <div className="relative w-full max-w-7xl rounded-3xl shadow-2xl overflow-hidden h-[80vh] flex items-center mt-15">
         <div className="absolute inset-0 pointer-events-none select-none">
           <LiquidChrome />
         </div>

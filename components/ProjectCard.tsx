@@ -50,11 +50,11 @@ export default function ProjectCard({
         {/* Logos row */}
         {logos && logos.length > 0 && (
           <>
-            <div className="flex items-center justify-center gap-6 pt-8 pb-8">
+            <div className="flex items-center justify-center gap-6 pt-20 pb-24">
               <img
                 src={logos[0]}
                 alt="Logo 1"
-                className="h-12 w-12 object-contain"
+                className="h-30 w-30 object-contain"
               />
               {logos[1] && (
                 <>
@@ -64,7 +64,7 @@ export default function ProjectCard({
                   <img
                     src={logos[1]}
                     alt="Logo 2"
-                    className="h-12 w-12 object-contain"
+                    className="h-30 w-30 object-contain"
                   />
                 </>
               )}

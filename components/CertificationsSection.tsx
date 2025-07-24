@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { VscAzure } from "react-icons/vsc";
+import { FaAws } from "react-icons/fa";
 import Image from "next/image";
 import FadeContent from "@/blocks/Animations/FadeContent/FadeContent";
 
@@ -18,6 +19,13 @@ const certs = [
     date: "2025",
     badge: "Azure AI",
     link: "https://www.credly.com/badges/your-ai900-link",
+  },
+  {
+    icon: <FaAws size={48} className="text-yellow-500" />,
+    title: "AWS Certified Cloud Practitioner",
+    date: "2025",
+    badge: "AWS",
+    link: "https://www.credly.com/badges/your-aws-link",
   },
   {
     icon: (

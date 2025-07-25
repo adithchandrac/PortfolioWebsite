@@ -36,7 +36,7 @@ export default function ExperienceItem({
         duration: 0.5,
         ease: [0.22, 1, 0.36, 1], // smooth cubic-bezier
       }}
-      className="flex space-x-4 py-6 items-start bg-surface-dark rounded-lg p-4 shadow-md"
+  className="flex space-x-4 py-6 items-start bg-surface-dark rounded-lg p-4 shadow-md border border-transparent hover:border-white/30 hover:shadow-xl transition-all duration-200 cursor-pointer"
     >
       <div className={`h-14 w-14 rounded-xl border border-border flex-shrink-0 overflow-hidden flex items-center justify-center
   ${company === "KPMG" ? "bg-white" : "bg-white/10"}

@@ -57,7 +57,7 @@ export default function CertificationsSection() {
                   <CarouselItem key={cert.title}>
                     <Card className="flex flex-col items-center justify-center p-8 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg min-h-[340px]">
                       <CardHeader className="flex flex-col items-center justify-center w-full">
-                        {cert.icon}
+                          {cert.icon}
                         <CardTitle className="mt-4 text-xl text-center">{cert.title}</CardTitle>
                         <CardDescription className="mt-2 text-sm text-gray-400">{cert.date}</CardDescription>
                       </CardHeader>

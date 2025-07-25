@@ -22,6 +22,7 @@ export default function ProjectsSection() {
                   tech={["Analytics", "Strategy", "Datathon"]}
                   repo="https://github.com/adithchandrac/nba-expansion"
                   logos={["nbalogo.png", "sac.png"]}
+                  codeExample={`// NBA Expansion: Market Analysis\nconst cities = ["Mexico City", "Pittsburgh"];\ncities.forEach(city => {\n  console.log(\`Evaluating market for \${city}\`);\n});`}
                 />
                 <ProjectCard
                   title="shovl. (Northrop Grumman Hack Week)"
@@ -30,6 +31,20 @@ export default function ProjectsSection() {
                   img="projects-shovl.png"
                   repo="https://github.com/adithchandrac/shovl"
                   demo="https://shovl-demo.com"
+                  codeExample={
+                    <div className="flex flex-col items-center justify-center">
+                      <img src="/shovlcode.png" alt="Shovl Bayesian Algorithm" className="rounded-lg mb-4 max-w-xs mx-auto" />
+                      <p className="text-base text-gray-200 text-center">
+                        <strong>Bayesian Ranking Algorithm:</strong><br />
+                        I designed and implemented a custom Bayesian algorithm that factored in:<br />
+                        • Rating (out of 5)<br />
+                        • Number of Reviews<br />
+                        • Sentiment Analysis using NLP on review text<br />
+                        • Vendor Age to determine vendor score<br />
+                        This approach allowed us to rank vendors more fairly and accurately by combining quantitative and qualitative data.
+                      </p>
+                    </div>
+                  }
                 />
                 <ProjectCard
                   title="WallStreetEdge AI Cofounder"
@@ -38,6 +53,7 @@ export default function ProjectsSection() {
                   logos={["wallstreetedge.png"]}
                   repo="https://github.com/adithchandrac/wallstreetedge"
                   demo="https://wallstreetedge.com"
+                  codeExample={`// WallStreetEdge: AI Tutor Prompt\nconst prompt = "Explain discounted cash flow analysis.";\nconst answer = await openai.ask(prompt);\nconsole.log(answer);`}
                 />
                 <ProjectCard
                   title="Amalgam Inc. Client Websites"
@@ -46,6 +62,7 @@ export default function ProjectsSection() {
                   logos={["amalgam.png", "confinity.png", "lotusrise.png"]}
                   repo="https://github.com/adithchandrac/amalgam-client-sites"
                   demo="https://lotusrise.org"
+                  codeExample={`// Amalgam Inc: Deploy Client Site\nconst client = "lotusrise.org";\ndeploySite(client, { framework: "React", cms: "Magnolia" });`}
                 />
               </div>
             </section>

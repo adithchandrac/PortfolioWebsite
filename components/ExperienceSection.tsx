@@ -48,7 +48,7 @@ export default function ExperienceSection() {
                   "Developed front-end UIs with React.js, Vue.js, and HTML; built back-end services with Magnolia and Core Java.",
                   "Followed Agile and TDD methodologies across the full software lifecycle.",
                   "Documented requirements and specifications to meet performance goals.",
-                ]}
+                ]} 
               />
             </section>
           </Container>

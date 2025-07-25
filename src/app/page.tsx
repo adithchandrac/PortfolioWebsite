@@ -1,3 +1,4 @@
+// filepath: [page.tsx](http://_vscodecontentref_/0)
 import HeroSection        from "../../components/HeroSection";
 import About              from "../../components/About";
 import ExperienceSection  from "../../components/ExperienceSection";

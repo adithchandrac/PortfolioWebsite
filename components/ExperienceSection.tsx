@@ -1,13 +1,10 @@
-import Silk from "@/blocks/Backgrounds/Silk/Silk";
 import Container from "./Container";
 import ExperienceItem from "./ExperienceItem";
 
 export default function ExperienceSection() {
   return (
     <section className="w-full py-12 flex justify-center">
-<div className="relative w-full max-w-7xl min-h-[700px] rounded-3xl shadow-2xl overflow-hidden">        <div className="absolute inset-0 pointer-events-none select-none">
-          <Silk />
-        </div>
+      <div className="relative w-full max-w-7xl min-h-[700px] rounded-3xl shadow-2xl overflow-hidden border border-white/10">
         <div className="relative z-10 w-full">
           <Container>
             <section id="experience" className="py-16 w-full">

@@ -9,6 +9,7 @@ import CertificationsSection from "../../components/CertificationsSection";
 export default function HomePage() {
   return (
     <div className="relative w-full overflow-x-hidden text-white">
+      <meta name="google-site-verification" content="TAUc_qW9N2-v5MCiBB82DBJ3BOk_ni9iuoqbd_zTNx0" />
       <HeroSection />
       <About />
       <ExperienceSection />

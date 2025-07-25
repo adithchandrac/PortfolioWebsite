@@ -7,13 +7,15 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 interface Props {
   title: string;
   description: string;
-  tech: string[];
+  tech: string[]
   img?: string;
   repo: string;
   demo?: string;
   logos?: string[];
   className?: string;
   codeExample?: ReactNode;
+  backClassName?: string; 
+
 }
 
 export default function ProjectCard({
@@ -26,6 +28,7 @@ export default function ProjectCard({
   logos,
   className = "",
   codeExample,
+  backClassName,
 }: Props) {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -106,7 +109,10 @@ export default function ProjectCard({
           </Card>
         </div>
         {/* Back Side */}
-        <div key="back" className="w-full h-full cursor-pointer flex flex-col items-center justify-center bg-black/80 rounded-2xl p-6 relative">
+        <div
+          key="back"
+          className={`w-full h-full cursor-pointer flex flex-col items-center justify-center bg-black/80 rounded-2xl p-6 relative ${backClassName}`}
+        >
           {codeExample || (
             <span className="text-gray-300 text-center">No example provided.</span>
           )}

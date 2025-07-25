@@ -18,11 +18,23 @@ export default function ProjectsSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 justify-items-center">
                 <ProjectCard
                   title="NBA Expansion Proposal"
-                  description="Developed a comprehensive expansion strategy for the NBA, conducting financial modeling on revenue streams, operational costs, and market viability for Mexico City and Pittsburgh. Led market research and risk analysis, evaluating fan engagement, economic infrastructure, and competitive positioning."
+                  description="Created original mockups for proposed Mexico City and Pittsburgh teams, underpinned by market research and financial projections."
                   tech={["Analytics", "Strategy", "Datathon"]}
-                  repo="https://github.com/adithchandrac/nba-expansion"
                   logos={["nbalogo.png", "sac.png"]}
-                  codeExample={`// NBA Expansion: Market Analysis\nconst cities = ["Mexico City", "Pittsburgh"];\ncities.forEach(city => {\n  console.log(\`Evaluating market for \${city}\`);\n});`}
+                  repo="https://github.com/adithchandrac/nba-expansion"
+                  backClassName="min-h-[500px]"
+                  codeExample={
+                    <div className="flex flex-col items-center justify-center">
+                      <img
+                        src="/nbamock.png"
+                        className="rounded-lg mb-4 max-w-xs mx-auto"
+                      />
+                      <p className="text-base text-gray-200 text-center">
+                        <strong>Arena Mockup:</strong><br />
+                        Visualized a 22,300‑seat venue with full branding and fan flow—backed by demographic and revenue forecasts.
+                      </p>
+                    </div>
+                  }
                 />
                 <ProjectCard
                   title="shovl. (Northrop Grumman Hack Week)"

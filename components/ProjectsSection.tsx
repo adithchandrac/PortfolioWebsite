@@ -35,7 +35,7 @@ export default function ProjectsSection() {
                   title="WallStreetEdge AI Cofounder"
                   description="Co-created an AI-powered web app to help students prepare for finance careers. Led product management, UI/UX, and technical direction. Built with Next.js, TypeScript, AWS, and OpenAI API. Managed the full product lifecycle from ideation to launch."
                   tech={["Next.js", "TypeScript", "AWS", "OpenAI", "MongoDB"]}
-                  img="wallstreetedge.png"
+                  logos={["wallstreetedge.png"]}
                   repo="https://github.com/adithchandrac/wallstreetedge"
                   demo="https://wallstreetedge.com"
                 />
@@ -43,7 +43,7 @@ export default function ProjectsSection() {
                   title="Amalgam Inc. Client Websites"
                   description="Worked with Amalgam Inc. to help design and build modern, performant websites for clients such as LotusRise.org and Confinity.com. Focused on fullstack development, UI/UX, and scalable deployment using React, Magnolia, and Java."
                   tech={["React", "Magnolia", "Java", "UI/UX"]}
-                  logos={["amalgam.png", "lotusrise.png"]}
+                  logos={["amalgam.png", "confinity.png", "lotusrise.png"]}
                   repo="https://github.com/adithchandrac/amalgam-client-sites"
                   demo="https://lotusrise.org"
                 />

@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import {
   Card,
@@ -48,30 +49,29 @@ export default function ProjectCard({
     >
       <CardHeader className="p-0">
         {/* Logos row */}
-        {logos && logos.length > 0 && (
-          <>
-            <div className="flex items-center justify-center gap-6 pt-20 pb-24">
-              <img
-                src={logos[0]}
-                alt="Logo 1"
-                className="h-30 w-30 object-contain"
-              />
-              {logos[1] && (
-                <>
-                  <span className="mx-2 text-3xl font-bold text-gray-400">
-                    ×
-                  </span>
-                  <img
-                    src={logos[1]}
-                    alt="Logo 2"
-                    className="h-30 w-30 object-contain"
-                  />
-                </>
-              )}
-            </div>
-            <div className="w-full border-b border-white/10" />
-          </>
-        )}
+       {logos && logos.length > 0 && (
+  <>
+    <div className="flex items-center justify-center gap-4 pt-20 pb-24 min-h-[120px]">
+      {logos.map((logo, idx) => (
+        <React.Fragment key={logo}>
+          <img
+            src={logo}
+            alt={`Logo ${idx + 1}`}
+            className={`h-16 w-16 rounded-xl bg-white ${
+              title.includes("WallStreetEdge") && idx === 0
+                ? "object-cover"
+                : "object-contain"
+            }`}
+          />
+          {idx < logos.length - 1 && (
+            <span className="mx-2 text-3xl font-bold text-gray-400">×</span>
+          )}
+        </React.Fragment>
+      ))}
+    </div>
+    <div className="w-full border-b border-white/10" />
+  </>
+)}
 
         {/* Optional image */}
         {!logos && img && (

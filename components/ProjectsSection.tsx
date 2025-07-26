@@ -21,7 +21,7 @@ export default function ProjectsSection() {
                   description="Created original mockups for proposed Mexico City and Pittsburgh teams, underpinned by market research and financial projections."
                   tech={["Analytics", "Strategy", "Datathon"]}
                   logos={["nbalogo.png", "sac.png"]}
-                  repo="https://github.com/adithchandrac/nba-expansion"
+                  proposal="https://docs.google.com/presentation/d/1ALJ7BIrQRhATiYt1-eIevO8XH7mQTwMQq7k6KB13L3o/edit?usp=embed_facebook://docs.google.com/presentation/d/1ALJ7BIrQRhATiYt1-eIevO8XH7mQTwMQq7k6KB13L3o/edit" // <-- use proposal instead of repo
                   backClassName="min-h-[500px]"
                   codeExample={
                     <div className="flex flex-col items-center justify-center">
@@ -41,8 +41,8 @@ export default function ProjectsSection() {
                   description="Placed 2nd in the 2023 Northrop Grumman Innovation Factory Hack Week, collaborating with a team of four to develop a full-stack Python web application. Conducted web scraping on 1.2M lines of data from 200,000+ companies. Implemented a custom ranking algorithm using Bayesian inference and sentiment analysis."
                   tech={["Python", "Django", "Hackathon"]}
                   img="projects-shovl.png"
-                  repo="https://github.com/adithchandrac/shovl"
-                  demo="https://shovl-demo.com"
+                  repo="https://github.com/parthav1/shovl."
+                  proposal="https://www.canva.com/design/DAFb64b2tD0/1Gri51DKzgOSo1Jl1_PvJg/edit?utm_content=DAFb64b2tD0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
                   codeExample={
                     <div className="flex flex-col items-center justify-center">
                       <img src="/shovlcode.png" alt="Shovl Bayesian Algorithm" className="rounded-lg mb-4 max-w-xs mx-auto" />
@@ -63,10 +63,18 @@ export default function ProjectsSection() {
                   description="Co-created an AI-powered web app to help students prepare for finance careers. Led product management, UI/UX, and technical direction. Built with Next.js, TypeScript, AWS, and OpenAI API. Managed the full product lifecycle from ideation to launch."
                   tech={["Next.js", "TypeScript", "AWS", "OpenAI", "MongoDB"]}
                   logos={["wallstreetedge.png"]}
-                  repo="https://github.com/adithchandrac/wallstreetedge"
-                  demo="https://wallstreetedge.com"
-                  codeExample={`// WallStreetEdge: AI Tutor Prompt\nconst prompt = "Explain discounted cash flow analysis.";\nconst answer = await openai.ask(prompt);\nconsole.log(answer);`}
-                />
+                  repo="https://github.com/WallStreetEdge/WallStreetEdge"
+                  website="https://wallstreetedge.com"
+                  video="/wallstreetedge.mp4" 
+                  codeExample={
+                    <div className="text-base text-gray-200 text-center">
+                      <strong>Leadership & Impact:</strong><br />
+                      Led product management, coordinated cross-functional teams, and drove technical strategy.<br />
+                      Oversaw user research, feature prioritization, and iterative design.<br />
+                      Managed stakeholder communications and ensured timely delivery from ideation to launch.
+                    </div>
+                  }                
+                  />
                 <ProjectCard
                   title="Amalgam Inc. Client Websites"
                   description="Worked with Amalgam Inc. to help design and build modern, performant websites for clients such as LotusRise.org and Confinity.com. Focused on fullstack development, UI/UX, and scalable deployment using React, Magnolia, and Java."

@@ -16,7 +16,7 @@ interface Props {
   description: string;
   tech: string[];
   img?: string;
-  video?: string; // <-- Add this line
+  video?: string;
   repo?: string;
   demo?: string;
   proposal?: string;
@@ -25,6 +25,7 @@ interface Props {
   className?: string;
   codeExample?: ReactNode;
   backClassName?: string;
+  codeExampleFooter?: ReactNode;
 }
 
 export default function ProjectCard({
@@ -32,7 +33,7 @@ export default function ProjectCard({
   description,
   tech,
   img,
-  video, // <-- Add this line
+  video,
   repo,
   demo,
   proposal,
@@ -41,10 +42,11 @@ export default function ProjectCard({
   className = "",
   codeExample,
   backClassName = "",
+  codeExampleFooter,
 }: Props) {
   return (
     <div
-      className="flip-container w-full"
+      className={`flip-container w-full ${className}`}
       onTouchStart={(e) => (e.currentTarget.classList.toggle("hover"))}
     >
       <div className="flipper w-full">
@@ -114,69 +116,73 @@ export default function ProjectCard({
         </div>
 
         {/* BACK */}
-<div
-  className={`back w-full cursor-pointer flex flex-col items-center justify-center rounded-2xl p-6 relative bg-black/80 ${backClassName}`}
->
-  {video && (
-    <video
-      src={video}
-      autoPlay
-      loop
-      muted
-      playsInline
-      className="mb-4 rounded-lg w-full max-w-md"
-    />
-  )}
-  {codeExample ? (
-    codeExample
-  ) : (
-    <span className="text-gray-300 text-center mb-4">
-      No example provided.
-    </span>
-  )}
-  <CardFooter className="flex justify-center gap-4 pb-4 mt-6">
-    {repo && (
-      <Link
-        href={repo}
-        className="underline underline-offset-4 hover:text-primary transition-colors"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub
-      </Link>
-    )}
-    {demo && (
-      <Link
-        href={demo}
-        className="underline underline-offset-4 hover:text-primary transition-colors"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Live Demo
-      </Link>
-    )}
-    {proposal && (
-      <Link
-        href={proposal}
-        className="underline underline-offset-4 hover:text-primary transition-colors"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Proposal
-      </Link>
-    )}
-    {website && (
-      <Link
-        href={website}
-        className="underline underline-offset-4 hover:text-primary transition-colors"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Website
-      </Link>
-    )}
-  </CardFooter>
-</div>
+        <div
+          className={`back w-full cursor-pointer flex flex-col items-center justify-center rounded-2xl p-6 relative bg-black/80 ${backClassName}`}
+        >
+          {video && (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="mb-4 rounded-lg w-full max-w-md"
+            />
+          )}
+          {codeExample ? (
+            codeExample
+          ) : (
+            <span className="text-gray-300 text-center mb-4">
+              No example provided.
+            </span>
+          )}
+          {codeExampleFooter ? (
+            codeExampleFooter
+          ) : (
+            <CardFooter className="flex justify-center gap-4 pb-4 mt-6">
+              {repo && (
+                <Link
+                  href={repo}
+                  className="underline underline-offset-4 hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </Link>
+              )}
+              {demo && (
+                <Link
+                  href={demo}
+                  className="underline underline-offset-4 hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </Link>
+              )}
+              {proposal && (
+                <Link
+                  href={proposal}
+                  className="underline underline-offset-4 hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Proposal
+                </Link>
+              )}
+              {website && (
+                <Link
+                  href={website}
+                  className="underline underline-offset-4 hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Website
+                </Link>
+              )}
+            </CardFooter>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import Aurora from "@/blocks/Backgrounds/Aurora/Aurora";
 import Container from "./Container";
 import ProjectCard from "./ProjectCard";
+import Link from "next/link";
 
 export default function ProjectsSection() {
   return (
@@ -21,7 +22,7 @@ export default function ProjectsSection() {
                   description="Created original mockups for proposed Mexico City and Pittsburgh teams, underpinned by market research and financial projections."
                   tech={["Analytics", "Strategy", "Datathon"]}
                   logos={["nbalogo.png", "sac.png"]}
-                  proposal="https://docs.google.com/presentation/d/1ALJ7BIrQRhATiYt1-eIevO8XH7mQTwMQq7k6KB13L3o/edit?usp=embed_facebook://docs.google.com/presentation/d/1ALJ7BIrQRhATiYt1-eIevO8XH7mQTwMQq7k6KB13L3o/edit" // <-- use proposal instead of repo
+                  proposal="https://docs.google.com/presentation/d/1ALJ7BIrQRhATiYt1-eIevO8XH7mQTwMQq7k6KB13L3o/edit?usp=embed_facebook://docs.google.com/presentation/d/1ALJ7BIrQRhATiYt1-eIevO8XH7mQTwMQq7k6KB13L3o/edit"
                   backClassName="min-h-[500px]"
                   codeExample={
                     <div className="flex flex-col items-center justify-center">
@@ -64,7 +65,7 @@ export default function ProjectsSection() {
                   tech={["Next.js", "TypeScript", "AWS", "OpenAI", "MongoDB"]}
                   logos={["wallstreetedge.png"]}
                   repo="https://github.com/WallStreetEdge/WallStreetEdge"
-                  website="https://wallstreetedge.com"
+                  website="https://wallstreetedge.co"
                   video="/wallstreetedge.mp4" 
                   codeExample={
                     <div className="text-base text-gray-200 text-center">
@@ -74,15 +75,53 @@ export default function ProjectsSection() {
                       Managed stakeholder communications and ensured timely delivery from ideation to launch.
                     </div>
                   }                
-                  />
+                />
                 <ProjectCard
                   title="Amalgam Inc. Client Websites"
                   description="Worked with Amalgam Inc. to help design and build modern, performant websites for clients such as LotusRise.org and Confinity.com. Focused on fullstack development, UI/UX, and scalable deployment using React, Magnolia, and Java."
                   tech={["React", "Magnolia", "Java", "UI/UX"]}
                   logos={["amalgam.png", "confinity.png", "lotusrise.png"]}
-                  repo="https://github.com/adithchandrac/amalgam-client-sites"
-                  demo="https://lotusrise.org"
-                  codeExample={`// Amalgam Inc: Deploy Client Site\nconst client = "lotusrise.org";\ndeploySite(client, { framework: "React", cms: "Magnolia" });`}
+                  codeExample={
+                    <div className="flex flex-col items-center justify-center">
+                      <div className="flex gap-4 mb-4">
+                        <img
+                          src="/confinity-website.png"
+                          alt="Confinity Website"
+                          className="rounded-lg max-w-[120px] w-full"
+                        />
+                        <img
+                          src="/lotusrise-website.png"
+                          alt="LotusRise Website"
+                          className="rounded-lg max-w-[120px] w-full"
+                        />
+                      </div>
+                      <p className="text-base text-gray-200 text-center">
+                        <strong>Project Roles:</strong><br />
+                        Supported engineering efforts for the Confinity website.<br />
+                        Led the LotusRise.org website development, collaborating with multiple stakeholders including executives, designers, and my fellow development team.
+                      </p>
+                    </div>
+                  }
+                  codeExampleFooter={
+                    <div className="flex justify-center gap-4 pb-4 mt-6">
+                      <Link
+                        href="https://lotusrise.org"
+                        className="underline underline-offset-4 hover:text-primary transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        LotusRise.org
+                      </Link>
+                      <Link
+                        href="https://confinity.com"
+                        className="underline underline-offset-4 hover:text-primary transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Confinity.com
+                      </Link>
+                    </div>
+                  }
                 />
               </div>
             </section>

@@ -6,6 +6,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 /* 1. Core design tokens */
 :root {
   --background: #f8fafc;      /* light gray */
@@ -57,3 +59,5 @@ html.dark {
     @apply underline-offset-2 transition;
   }
 }
+
+@import "./flip.css"

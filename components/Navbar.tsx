@@ -38,13 +38,13 @@ export default function Navbar() {
       />
 
       {/* Categories/Links on the right */}
-      <div className="flex-1 flex justify-end space-x-4">
+      <div className="flex-1 flex justify-end space-x-2">
         {sections.map((sec) => (
           <Link
             key={sec.href}
             href={sec.href}
             className="
-              px-4 py-1
+              px-3 py-1
               text-sm font-medium capitalize text-body-text
               rounded-full
               transition

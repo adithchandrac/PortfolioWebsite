@@ -9,8 +9,7 @@ import Magnet from "@/blocks/Animations/Magnet/Magnet";
 
 export default function HeroSection() {
   return (
-    <section className="w-full py-12 flex justify-center relative pt-30">
-      {/* LightRays background only for Hero */}
+    <section className="w-full py-12 flex justify-center relative pt-30 bg-background text-foreground">
       <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
         <LightRays
           raysOrigin="top-center"
@@ -29,7 +28,7 @@ export default function HeroSection() {
       <div className="relative z-10 w-full">
         <Container>
           <div className="flex flex-col items-center justify-center min-h-[80vh] pt-32 pb-16 w-full">
-            <div className="rounded-xl border border-white/10 shadow-2xl overflow-hidden">
+            <div className="rounded-xl border border-border shadow-2xl overflow-hidden bg-card">
               <Image
                 src="/headshot.png"
                 alt="Adith Chandrasekaran"
@@ -39,15 +38,15 @@ export default function HeroSection() {
                 priority
               />
             </div>
-            <h1 className="mt-8 text-6xl font-bold text-center tracking-tight">
+            <h1 className="mt-8 text-6xl font-bold text-center tracking-tight text-heading">
               <ShinyText
                 text="Adith Chandrasekaran"
                 speed={5}
-                className="text-6xl font-bold text-center tracking-tight"
+                className="text-6xl font-bold text-center tracking-tight text-heading"
               />
             </h1>
             <FadeContent>
-              <p className="mt-4 text-2xl text-gray-300 text-center max-w-5xl font-medium">
+              <p className="mt-4 text-2xl text-bodyText text-center max-w-5xl font-medium">
                 Senior CS Student & Full Stack Engineer & Product Manager <br />
                 Building modern web apps with React, Next.js & Gen‑AI
               </p>

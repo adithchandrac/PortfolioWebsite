@@ -193,6 +193,8 @@ interface BeamsProps {
   noiseIntensity?: number;
   scale?: number;
   rotation?: number;
+  mode?: "light" | "dark";
+
 }
 
 const Beams: FC<BeamsProps> = ({
@@ -204,7 +206,17 @@ const Beams: FC<BeamsProps> = ({
   noiseIntensity = 1.75,
   scale = 0.2,
   rotation = 0,
+  mode = "light",
+
 }) => {
+
+  const backgroundColor =
+    mode === "dark"
+      ? "#000000"
+      : typeof window !== "undefined"
+        ? getComputedStyle(document.documentElement).getPropertyValue('--background') || "#f8fafc"
+        : "#f8fafc";
+  const beamColor = mode === "dark" ? "#e5e7eb" : "#6366F1";  
   const meshRef = useRef<
     THREE.Mesh<THREE.BufferGeometry, THREE.ShaderMaterial>
   >(null!);
@@ -267,7 +279,7 @@ const Beams: FC<BeamsProps> = ({
   );
 
   return (
-    <CanvasWrapper>
+      <CanvasWrapper>
       <group rotation={[0, 0, degToRad(rotation)]}>
         <PlaneNoise
           ref={meshRef}
@@ -276,10 +288,10 @@ const Beams: FC<BeamsProps> = ({
           width={beamWidth}
           height={beamHeight}
         />
-        <DirLight color={lightColor} position={[0, 3, 10]} />
+        <DirLight color={beamColor} position={[0, 3, 10]} />
       </group>
       <ambientLight intensity={1} />
-      <color attach="background" args={["#000000"]} />
+      <color attach="background" args={[backgroundColor]} />
       <PerspectiveCamera makeDefault position={[0, 0, 20]} fov={30} />
     </CanvasWrapper>
   );

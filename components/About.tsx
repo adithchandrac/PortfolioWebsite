@@ -1,17 +1,27 @@
+"use client";
 import Beams from "@/blocks/Backgrounds/Beams/Beams";
 import Container from "./Container";
 import ScrollReveal from "@/blocks/TextAnimations/ScrollReveal/ScrollReveal";
+import { useState, useEffect } from "react";
 
 export default function About() {
+  
+  const [mode, setMode] = useState<"light" | "dark">("light");
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setMode(document.documentElement.classList.contains("dark") ? "dark" : "light");
+    }
+  }, []);
   return (
-    <section className="w-full py-12 flex justify-center">
-      <div className="relative w-full max-w-7xl rounded-3xl shadow-2xl overflow-hidden border border-white/10">
+    <section className="w-full py-12 flex justify-center bg-background text-foreground">
+      <div className="relative w-full max-w-7xl rounded-3xl shadow-2xl overflow-hidden border border-black/40 dark:border-white/10 bg-card">
         <div className="absolute inset-0 pointer-events-none select-none">
           <Beams
             beamWidth={3}
             beamHeight={30}
             beamNumber={20}
-            lightColor="#6366F1"
+            lightColor={mode === "dark" ? "#e5e7eb" : "#6366F1"}
+            mode={mode}
             speed={2}
             noiseIntensity={1.2}
             scale={0.18}
@@ -21,14 +31,14 @@ export default function About() {
         <div className="relative z-10 w-full">
           <Container>
             <section id="about" className="py-16 w-full pb-10">
-              <h2 className="text-3xl font-semibold text-center">About Me</h2>
-              <div className="mt-4 text-gray-300 leading-relaxed whitespace-pre-line">
+              <h2 className="text-3xl font-semibold text-center text-heading">About Me</h2>
+              <div className="mt-4 text-bodyText leading-relaxed whitespace-pre-line">
                 <ScrollReveal
-                  baseOpacity={0.4}          
+                  baseOpacity={0.4}
                   enableBlur={true}
-                  baseRotation={1}            
-                  blurStrength={4}            
-                  rotationEnd="bottom bottom" 
+                  baseRotation={1}
+                  blurStrength={4}
+                  rotationEnd="bottom bottom"
                   wordAnimationEnd="bottom bottom"
                   textClassName="!text-lg leading-loose"
                 >
@@ -48,3 +58,4 @@ Outside of coursework and internships, I've contributed to competitive projects 
     </section>
   );
 }
+

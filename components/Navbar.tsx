@@ -21,24 +21,26 @@ export default function Navbar() {
         backdrop-blur-lg
         rounded-3xl
         shadow-md
-        flex items-center
+        flex items-center justify-between
         border dark:border-white/10
       "
       style={{
         boxShadow: "0 2px 16px 0 rgba(255,255,255,0.04)",
       }}
     >
-      {/* Logo on the left */}
-      <Image
-        src="/logo.png"
-        alt="Logo"
-        width={32}
-        height={32}
-        className="rounded-full shadow-sm border border-black/10"
-      />
+      {/* Left: Logo */}
+      <div className="flex-1 flex justify-start">
+        <Image
+          src="/logo.png"
+          alt="Logo"
+          width={32}
+          height={32}
+          className="rounded-full shadow-sm border border-black/10"
+        />
+      </div>
 
-      {/* Categories/Links on the right */}
-      <div className="flex-1 flex justify-end space-x-2">
+      {/* Center: Nav links */}
+      <div className="flex-1 flex justify-center space-x-4">
         {sections.map((sec) => (
           <Link
             key={sec.href}
@@ -55,6 +57,9 @@ export default function Navbar() {
           </Link>
         ))}
       </div>
+
+      {/* Right: Empty spacer (or future button/user menu) */}
+      <div className="flex-1" />
     </nav>
   );
 }
